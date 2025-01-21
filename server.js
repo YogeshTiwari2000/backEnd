@@ -5,6 +5,7 @@ const personRoutes=require('./routes/personRoutes')
 const menuRoutes=require('./routes/menuRoutes')
 const User=require('./model/User')
 const userRoutes=require('./routes/userRoutes')
+require('dotenv').config();
 
 
 const app = express();
@@ -23,7 +24,11 @@ app.use('/person',personRoutes)
 app.use('/menu',menuRoutes)
 app.use('/user',userRoutes)
 
-app.listen(3000)
+const PORT=process.env.PORT || 3000 // in future when hoisting port no. will chnage to the domain or run locally on 3000
+
+app.listen(PORT,()=>{
+  console.log("listening on 3000")
+})
 
 // console.log("hello HEro");
 // function add(a, b) {

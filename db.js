@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 // const mongoURL = 'mongodb://localhost:27017/hotels';
-const mongoURL = 'mongodb+srv://yogeshtiwari:FVepW1UGes8KURje@cluster0.jnxmj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0' // For Atlas
+const mongoURL = process.env.Atlas_connection // For Atlas
 
 
 
