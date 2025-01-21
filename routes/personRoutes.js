@@ -48,30 +48,7 @@ router.get('/:work', async (req, res) => {
         res.status(500).json({ error: 'internal server error' })
     }
 })
-// router.put('/:id', async (req, res) => {
-//     try {
-//         const personId = req.params.id; // Get the ID from the URL parameter
-//         const updateData = req.body; // Get the update data from the request body
 
-//         // Find and update the user by ID
-//         const updatedPerson = await Person.findOneAndUpdate(
-//             { personId: personId }, // Match the user by `id`
-//             updateData,     // Update with the new data
-//             { new: true },  // Return the updated user
-//             { runValidators: true }
-//         );
-
-//         if (!updatedPerson) {
-//             return res.status(404).json({ error: 'Person not found' });
-//         }
-
-//         console.log('Person updated:', updatedPerson);
-//         res.status(200).json({ message: 'Person updated successfully', user: updatedPerson });
-//     } catch (error) {
-//         console.error('Error updating user:', error);
-//         res.status(500).json({ error: 'Internal server error' });
-//     }
-// });
 router.put('/:id', async (req, res) => {
     try {
         const personId = req.params.id; // Get the ID from the URL parameter

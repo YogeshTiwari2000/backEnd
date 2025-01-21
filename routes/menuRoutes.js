@@ -34,10 +34,10 @@ router.get('/:taste', async (req, res) => {
     try {
         tasteType = req.params.taste;
         if (tasteType == 'sweet' || tasteType == 'spicy' || tasteType == 'sour') {
-            response = await Menu.find({ work: workType })
+            response = await Menu.find({ taste: tasteType })
             res.status(200).json(response);
         } else {
-            res.status(400).json({ message: "Invalid work type" });
+            res.status(400).json({ message: "Invalid tasteType type" });
         }
     }
     catch (error) {
@@ -48,8 +48,8 @@ router.get('/:taste', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     try {
         const menuItemId = req.params.id;
-        // const deletedMenu = await Menu.findOneAndDelete({ id: menuId });
-        const deletedMenuItem = await Menu.findByIdAndDelete(menuItemId);
+        // const deletedMenu = await Menu.findOneAndDelete({ id: menuId }); // use findOneAndDelete for custom_id 
+        const deletedMenuItem = await Menu.findByIdAndDelete(menuItemId); //Use `findByIdAndDelete` for MongoDB's `_id`
 
         if (!deletedMenuItem) {
             return res.status(404).json({ error: 'Item not found' });
