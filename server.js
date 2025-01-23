@@ -22,7 +22,9 @@ app.use(passport.initialize());
 const localAuthMiddleware = passport.authenticate('local', { session: false })
 
 //  # 4 using created authMiddleware for  ( / route) calling passport auth for ( "/" route)
-app.use('/person', localAuthMiddleware, personRoutes)
+// app.use('/person', localAuthMiddleware, personRoutes)
+app.use('/person', personRoutes)
+
 
 // logRequest middleWare to log all the details on all routes
 
