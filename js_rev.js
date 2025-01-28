@@ -13,14 +13,19 @@
 // var fs = require('fs')
 // var os = require('os')
 
-
-// var _ = require('lodash'); // has no. of build i function to use // e.g chunk() : group kr dega , drop(): delet kr dega, take() : will or make array of size n of the orignal size // union() ;intersection (), 
-
+// console.log('OS Type:', os.type());
+// console.log('Platform:', os.platform());
+// console.log('Architecture:', os.arch());
+// console.log('CPU Details:', os.cpus());
 
 
 // var user = os.userInfo()
 
 // console.log(user.username);
+
+// var _ = require('lodash'); // has no. of build i function to use // e.g chunk() : group kr dega , drop(): delet kr dega, take() : will or make array of size n of the orignal size // union() ;intersection (), 
+
+
 
 // var age = notes.age;
 // var add = notes.add(age, 12)

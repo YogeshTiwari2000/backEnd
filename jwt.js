@@ -10,7 +10,7 @@ const jwtAuthMiddleware = (req, res, next) => {
         //verify the jwt token
         const decoded = jwt.verify(token, process.env.JWT_SECRET)
         // attach user info
-        req.data = decoded;
+        req.data = decoded; // extracting data from token here // using this data in profile page using jwtmiddlware there
         // console.log('req.data', req.data);
 
         next();
